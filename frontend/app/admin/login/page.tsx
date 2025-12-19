@@ -6,6 +6,8 @@ import { Lock } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 
+import { API_URL } from "@/lib/api";
+
 export default function AdminLogin() {
     const router = useRouter();
     const [email, setEmail] = useState("");
@@ -23,7 +25,7 @@ export default function AdminLogin() {
             formData.append("username", email);
             formData.append("password", password);
 
-            const res = await fetch("http://localhost:8000/api/v1/login/access-token", {
+            const res = await fetch(`${API_URL}/login/access-token`, {
                 method: "POST",
                 body: formData,
             });

@@ -143,7 +143,7 @@ export default function Home() {
                 ) : (
                     <div className="grid grid-cols-2 gap-4">
                         {places.map(place => (
-                            <Link href={`/ places / ${place.id} `} key={place.id} className="block group">
+                            <Link href={`/places/${place.id}`} key={place.id} className="block group">
                                 <div className="bg-white rounded-2xl overflow-hidden shadow-md border border-sand-100 group-hover:shadow-lg transition-all h-full flex flex-col">
                                     <div className="h-28 w-full bg-slate-200 relative">
                                         {place.photo_url ? (
@@ -169,83 +169,7 @@ export default function Home() {
                 )}
             </div>
 
-            {/* Trust & Tools */}
-            <div className="px-6 mt-8 mb-8">
-                <div className="flex items-center justify-between mb-6">
-                    <h2 className="text-slate-900 font-bold text-xl">{t('home.toolsTitle')}</h2>
-                    <span className="text-xs font-bold text-primary bg-primary-50 px-3 py-1 rounded-full uppercase tracking-wider">Beta</span>
-                </div>
 
-                {/* Tools Grid */}
-                <div className="grid grid-cols-2 gap-4 mb-24">
-                    <Link href="/camera" className="col-span-2 group relative overflow-hidden rounded-3xl bg-black aspect-[2/1] shadow-xl">
-                        <img
-                            src="https://images.unsplash.com/photo-1590233630635-424a18012a67?q=80&w=800&auto=format&fit=crop"
-                            alt="Scan"
-                            className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
-                        <div className="absolute bottom-0 left-0 p-6">
-                            <div className="flex items-center gap-3 mb-2">
-                                <div className="p-3 rounded-full bg-emerald-500 text-white">
-                                    <Scan size={24} />
-                                </div>
-                                <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-2 py-1 rounded-lg backdrop-blur-md">AI Powered</span>
-                            </div>
-                            <h3 className="text-2xl font-bold text-white mb-2">{t('home.cards.scan.title')}</h3>
-                            <p className="text-white/80 text-sm line-clamp-2">{t('home.cards.scan.desc')}</p>
-                        </div>
-                    </Link>
-
-                    <Link href="/tour" className="group p-6 rounded-3xl bg-slate-100 hover:bg-slate-200 transition-colors shadow-sm">
-                        <div className="mb-4 p-3 rounded-2xl bg-white w-fit shadow-sm text-blue-600 group-hover:scale-110 transition-transform">
-                            <Headphones size={28} />
-                        </div>
-                        <h3 className="text-lg font-bold text-slate-900 mb-1">{t('home.cards.tours.title')}</h3>
-                        <p className="text-slate-500 text-xs">{t('home.cards.tours.desc')}</p>
-                    </Link>
-
-                    <Link href="/plan" className="group p-6 rounded-3xl bg-slate-100 hover:bg-slate-200 transition-colors shadow-sm">
-                        <div className="mb-4 p-3 rounded-2xl bg-white w-fit shadow-sm text-rose-600 group-hover:scale-110 transition-transform">
-                            <PenTool size={28} />
-                        </div>
-                        <h3 className="text-lg font-bold text-slate-900 mb-1">{t('home.cards.plan.title')}</h3>
-                        <p className="text-slate-500 text-xs">{t('home.cards.plan.desc')}</p>
-                    </Link>
-
-                    <Link href="/translator" className="group p-6 rounded-3xl bg-slate-100 hover:bg-slate-200 transition-colors shadow-sm">
-                        <div className="mb-4 p-3 rounded-2xl bg-white w-fit shadow-sm text-indigo-600 group-hover:scale-110 transition-transform">
-                            <Languages size={28} />
-                        </div>
-                        <h3 className="text-lg font-bold text-slate-900 mb-1">{t('home.cards.translate.title')}</h3>
-                        <p className="text-slate-500 text-xs">{t('home.cards.translate.desc')}</p>
-                    </Link>
-
-                    {/* NEW MAP BUTTON */}
-                    <Link href="/map" className="group p-6 rounded-3xl bg-slate-100 hover:bg-slate-200 transition-colors shadow-sm">
-                        <div className="mb-4 p-3 rounded-2xl bg-white w-fit shadow-sm text-amber-600 group-hover:scale-110 transition-transform">
-                            <MapIcon size={28} />
-                        </div>
-                        <h3 className="text-lg font-bold text-slate-900 mb-1">{t('nav.map') || "Map"}</h3>
-                        <p className="text-slate-500 text-xs">{t('nav.mapDesc') || "Explore Ichan Kala"}</p>
-                    </Link>
-                </div>
-                <div className="space-y-4">
-                    <Link href="/shops" className="block group">
-                        <div className="bg-white p-4 rounded-2xl flex items-center space-x-4 shadow-sm border border-sand-200 group-hover:border-primary/30 transition-colors">
-                            <div className="bg-rose-50 p-2.5 rounded-xl text-rose-500">
-                                <ShoppingBag size={20} />
-                            </div>
-                            <div className="flex-1">
-                                <h4 className="font-bold text-slate-800 text-sm">{t('home.authChecker')}</h4>
-                                <p className="text-xs text-slate-500 mt-0.5">{t('home.authDesc')}</p>
-                            </div>
-                            <ChevronRight size={16} className="text-slate-300" />
-                        </div>
-                    </Link>
-
-                </div>
-            </div>
 
             {/* Trust Signals */}
             <div className="px-6 py-8 bg-sand-100/50">
