@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { Play, Square, Save, Trash2, MapPin, Footprints } from "lucide-react";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
+import { API_URL } from "@/lib/api";
 
 interface Place {
     id: number;
@@ -82,7 +83,7 @@ export default function LocationMapperPage() {
         try {
             const token = localStorage.getItem("admin_token");
             // Request all places including children for the mapper
-            const res = await fetch("http://localhost:8000/api/v1/admin/places?limit=1000&include_children=true", {
+            const res = await fetch(`${API_URL}/admin/places?limit=1000&include_children=true`, {
                 headers: { "Authorization": `Bearer ${token}` }
             });
             if (res.ok) {
@@ -163,7 +164,7 @@ export default function LocationMapperPage() {
 
             if (existingPlace) {
                 // UPDATE user existing ID
-                const res = await fetch(`http://localhost:8000/api/v1/admin/places/${existingPlace.id}`, {
+                const res = await fetch(`${API_URL}/admin/places/${existingPlace.id}`, {
                     method: "PUT",
                     headers: {
                         "Content-Type": "application/json",
@@ -189,7 +190,7 @@ export default function LocationMapperPage() {
                 const centerLat = recordedPoints[0].lat;
                 const centerLng = recordedPoints[0].lng;
 
-                const res = await fetch("http://localhost:8000/api/v1/admin/places", {
+                const res = await fetch(`${API_URL}/admin/places`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -227,7 +228,7 @@ export default function LocationMapperPage() {
 
         try {
             const token = localStorage.getItem("admin_token");
-            const res = await fetch(`http://localhost:8000/api/v1/admin/places/${id}`, {
+            const res = await fetch(`${API_URL}/admin/places/${id}`, {
                 method: "DELETE",
                 headers: { "Authorization": `Bearer ${token}` }
             });

@@ -7,6 +7,7 @@ import { Card } from "@/components/ui/Card";
 import { Input } from "@/components/ui/Input";
 import { AdminModal } from "@/components/ui/AdminModal";
 import { ImageUpload } from "@/components/ui/ImageUpload";
+import { API_URL } from "@/lib/api";
 
 export default function AdminPlacesPage() {
     const [places, setPlaces] = useState<any[]>([]);
@@ -20,7 +21,7 @@ export default function AdminPlacesPage() {
 
     const fetchPlaces = async () => {
         const token = localStorage.getItem("admin_token");
-        const res = await fetch("http://localhost:8000/api/v1/admin/places", {
+        const res = await fetch(`${API_URL}/admin/places`, {
             headers: { Authorization: `Bearer ${token}` }
         });
         if (res.ok) setPlaces(await res.json());
@@ -33,8 +34,8 @@ export default function AdminPlacesPage() {
         setLoading(true);
         const token = localStorage.getItem("admin_token");
         const url = currentItem
-            ? `http://localhost:8000/api/v1/admin/places/${currentItem.id}`
-            : "http://localhost:8000/api/v1/admin/places";
+            ? `${API_URL}/admin/places/${currentItem.id}`
+            : `${API_URL}/admin/places`;
 
         try {
             await fetch(url, {
@@ -55,7 +56,7 @@ export default function AdminPlacesPage() {
         if (!confirm("Delete this place?")) return;
         const token = localStorage.getItem("admin_token");
         try {
-            const res = await fetch(`http://localhost:8000/api/v1/admin/places/${id}`, {
+            const res = await fetch(`${API_URL}/admin/places/${id}`, {
                 method: "DELETE",
                 headers: { Authorization: `Bearer ${token}` }
             });

@@ -7,6 +7,7 @@ import { Card } from "@/components/ui/Card";
 import { Input } from "@/components/ui/Input";
 import { AdminModal } from "@/components/ui/AdminModal";
 import { ImageUpload } from "@/components/ui/ImageUpload";
+import { API_URL } from "@/lib/api";
 
 export default function AdminHotelsPage() {
     const [items, setItems] = useState<any[]>([]);
@@ -17,7 +18,7 @@ export default function AdminHotelsPage() {
 
     const fetchItems = async () => {
         const token = localStorage.getItem("admin_token");
-        const res = await fetch("http://localhost:8000/api/v1/admin/hotels", {
+        const res = await fetch(`${API_URL}/admin/hotels`, {
             headers: { Authorization: `Bearer ${token}` }
         });
         if (res.ok) setItems(await res.json());
@@ -30,8 +31,8 @@ export default function AdminHotelsPage() {
         setLoading(true);
         const token = localStorage.getItem("admin_token");
         const url = currentItem
-            ? `http://localhost:8000/api/v1/admin/hotels/${currentItem.id}`
-            : "http://localhost:8000/api/v1/admin/hotels";
+            ? `${API_URL}/admin/hotels/${currentItem.id}`
+            : `${API_URL}/admin/hotels`;
 
         try {
             await fetch(url, {
@@ -51,7 +52,7 @@ export default function AdminHotelsPage() {
     const handleDelete = async (id: number) => {
         if (!confirm("Delete this hotel?")) return;
         const token = localStorage.getItem("admin_token");
-        await fetch(`http://localhost:8000/api/v1/admin/hotels/${id}`, {
+        await fetch(`${API_URL}/admin/hotels/${id}`, {
             method: "DELETE",
             headers: { Authorization: `Bearer ${token}` }
         });

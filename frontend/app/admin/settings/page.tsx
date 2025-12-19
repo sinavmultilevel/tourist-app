@@ -5,6 +5,7 @@ import { Save } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Input } from "@/components/ui/Input";
+import { API_URL } from "@/lib/api";
 
 export default function AdminSettingsPage() {
     const [configs, setConfigs] = useState<any[]>([]);
@@ -16,7 +17,7 @@ export default function AdminSettingsPage() {
 
     const fetchConfigs = async () => {
         const token = localStorage.getItem("admin_token");
-        const res = await fetch("http://localhost:8000/api/v1/admin/config", {
+        const res = await fetch(`${API_URL}/admin/config`, {
             headers: { Authorization: `Bearer ${token}` }
         });
         if (res.ok) {
@@ -38,7 +39,7 @@ export default function AdminSettingsPage() {
         setLoading(true);
         const token = localStorage.getItem("admin_token");
         try {
-            await fetch("http://localhost:8000/api/v1/admin/config", {
+            await fetch(`${API_URL}/admin/config`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
                 body: JSON.stringify({ key, value: JSON.stringify(value) })

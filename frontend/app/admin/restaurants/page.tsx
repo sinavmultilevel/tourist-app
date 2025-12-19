@@ -7,6 +7,7 @@ import { Card } from "@/components/ui/Card";
 import { Input } from "@/components/ui/Input";
 import { AdminModal } from "@/components/ui/AdminModal";
 import { ImageUpload } from "@/components/ui/ImageUpload";
+import { API_URL } from "@/lib/api";
 
 export default function AdminRestaurantsPage() {
     const [items, setItems] = useState<any[]>([]);
@@ -17,7 +18,7 @@ export default function AdminRestaurantsPage() {
 
     const fetchItems = async () => {
         const token = localStorage.getItem("admin_token");
-        const res = await fetch("http://localhost:8000/api/v1/admin/restaurants", {
+        const res = await fetch(`${API_URL}/admin/restaurants`, {
             headers: { Authorization: `Bearer ${token}` }
         });
         if (res.ok) setItems(await res.json());
@@ -30,8 +31,8 @@ export default function AdminRestaurantsPage() {
         setLoading(true);
         const token = localStorage.getItem("admin_token");
         const url = currentItem
-            ? `http://localhost:8000/api/v1/admin/restaurants/${currentItem.id}`
-            : "http://localhost:8000/api/v1/admin/restaurants";
+            ? `${API_URL}/admin/restaurants/${currentItem.id}`
+            : `${API_URL}/admin/restaurants`;
 
         try {
             await fetch(url, {
@@ -51,7 +52,7 @@ export default function AdminRestaurantsPage() {
     const handleDelete = async (id: number) => {
         if (!confirm("Delete this restaurant?")) return;
         const token = localStorage.getItem("admin_token");
-        await fetch(`http://localhost:8000/api/v1/admin/restaurants/${id}`, {
+        await fetch(`${API_URL}/admin/restaurants/${id}`, {
             method: "DELETE",
             headers: { Authorization: `Bearer ${token}` }
         });

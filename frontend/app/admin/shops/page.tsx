@@ -7,6 +7,7 @@ import { Card } from "@/components/ui/Card";
 import { Input } from "@/components/ui/Input";
 import { AdminModal } from "@/components/ui/AdminModal";
 import { ImageUpload } from "@/components/ui/ImageUpload";
+import { API_URL } from "@/lib/api";
 
 export default function AdminShopsPage() {
     const [items, setItems] = useState<any[]>([]);
@@ -17,7 +18,7 @@ export default function AdminShopsPage() {
 
     const fetchItems = async () => {
         const token = localStorage.getItem("admin_token");
-        const res = await fetch("http://localhost:8000/api/v1/admin/shops", {
+        const res = await fetch(`${API_URL}/admin/shops`, {
             headers: { Authorization: `Bearer ${token}` }
         });
         if (res.ok) setItems(await res.json());
@@ -30,8 +31,8 @@ export default function AdminShopsPage() {
         setLoading(true);
         const token = localStorage.getItem("admin_token");
         const url = currentItem
-            ? `http://localhost:8000/api/v1/admin/shops/${currentItem.id}`
-            : "http://localhost:8000/api/v1/admin/shops";
+            ? `${API_URL}/admin/shops/${currentItem.id}`
+            : `${API_URL}/admin/shops`;
 
         try {
             await fetch(url, {
@@ -51,7 +52,7 @@ export default function AdminShopsPage() {
     const handleDelete = async (id: number) => {
         if (!confirm("Delete this shop?")) return;
         const token = localStorage.getItem("admin_token");
-        await fetch(`http://localhost:8000/api/v1/admin/shops/${id}`, {
+        await fetch(`${API_URL}/admin/shops/${id}`, {
             method: "DELETE",
             headers: { Authorization: `Bearer ${token}` }
         });
