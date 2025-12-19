@@ -1,5 +1,6 @@
 const apiHost = process.env.NEXT_PUBLIC_API_HOST;
-export const API_URL = process.env.NEXT_PUBLIC_API_URL || (apiHost ? `https://${apiHost}/api/v1` : 'http://localhost:8000/api/v1');
+// Trim to handle accidental spaces in env vars
+export const API_URL = (process.env.NEXT_PUBLIC_API_URL || (apiHost ? `https://${apiHost}/api/v1` : 'https://ichan-kala-backend.onrender.com/api/v1')).trim();
 
 export interface Place {
     id: number;
