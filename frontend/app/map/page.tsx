@@ -4,7 +4,14 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
-import InteractiveMap from "@/components/ui/Map";
+import dynamic from 'next/dynamic';
+
+const InteractiveMap = dynamic(() => import('@/components/ui/Map'), {
+    ssr: false,
+    loading: () => <div className="h-full w-full flex items-center justify-center bg-slate-100">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-600"></div>
+    </div>
+});
 import { fetchPlaces, Place } from "@/lib/api";
 import { useTranslation } from "@/lib/i18n/LanguageContext";
 

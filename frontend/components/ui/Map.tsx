@@ -4,6 +4,7 @@
 import { useEffect, useState } from 'react';
 import { Place } from '@/lib/api'; // Ensure this import path is correct
 // Leaflet CSS must be imported globally or here
+// Leaflet CSS must be imported globally or here
 import 'leaflet/dist/leaflet.css';
 // Dynamic import for Leaflet components to avoid SSR issues
 import dynamic from 'next/dynamic';
@@ -12,18 +13,6 @@ const MapContainer = dynamic(() => import('react-leaflet').then(mod => mod.MapCo
 const TileLayer = dynamic(() => import('react-leaflet').then(mod => mod.TileLayer), { ssr: false });
 const Marker = dynamic(() => import('react-leaflet').then(mod => mod.Marker), { ssr: false });
 const Popup = dynamic(() => import('react-leaflet').then(mod => mod.Popup), { ssr: false });
-
-// Fix for default marker icons in Leaflet with Next.js
-import L from 'leaflet';
-const DefaultIcon = L.icon({
-    iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
-    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
-    iconSize: [25, 41],
-    iconAnchor: [12, 41],
-    popupAnchor: [1, -34],
-    shadowSize: [41, 41]
-});
-L.Marker.prototype.options.icon = DefaultIcon;
 
 interface MapProps {
     places: Place[];
@@ -35,6 +24,18 @@ export default function InteractiveMap({ places }: MapProps) {
 
     useEffect(() => {
         setIsMounted(true);
+        (async () => {
+            const L = (await import('leaflet')).default;
+            const DefaultIcon = L.icon({
+                iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+                shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+                iconSize: [25, 41],
+                iconAnchor: [12, 41],
+                popupAnchor: [1, -34],
+                shadowSize: [41, 41]
+            });
+            L.Marker.prototype.options.icon = DefaultIcon;
+        })();
     }, []);
 
     if (!isMounted) {

@@ -130,6 +130,7 @@ export async function chatWithAI(query: string, context: string, lang: string): 
 export interface AudioResponse {
     audio_base64: string;
     content_type: string;
+    text_content?: string;
 }
 
 export async function speakText(text: string, target_lang: string): Promise<AudioResponse> {
