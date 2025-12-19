@@ -1,0 +1,16 @@
+{
+    "name": "Ichan Kala AI Tour Guide",
+    "short_name": "Ichan Kala",
+    "description": "Your personalized AI historian for Khiva's ancient citadel",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#FDFBF7",
+    "theme_color": "#0F766E",
+    "icons": [
+        {
+            "src": "/icon.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ]
+}

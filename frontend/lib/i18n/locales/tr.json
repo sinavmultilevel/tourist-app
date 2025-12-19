@@ -1,0 +1,172 @@
+{
+    "common": {
+        "appName": "Ichan Kala AI Rehberi",
+        "back": "Geri",
+        "loading": "Yükleniyor...",
+        "error": "Bir hata oluştu",
+        "tryAgain": "Tekrar Dene",
+        "hotels": "Konaklama",
+        "restaurants": "Yeme & İçme",
+        "shops": "Alışveriş"
+    },
+    "nav": {
+        "home": "Ana Sayfa",
+        "tours": "Sesli Turlar",
+        "camera": "AI Tarayıcı",
+        "planner": "Gezi Planlayıcı",
+        "translator": "Çevirmen",
+        "map": "Harita",
+        "mapDesc": "Ichan Kala'yı Keşfet"
+    },
+    "home": {
+        "heroTitle": "Hive <br/> <span class='text-secondary-light'>Keşfedilmeyi Bekliyor.</span>",
+        "heroSubtitle": "Ichan Kala yolculuğunuz için resmi AI destekli tarihçi.",
+        "startExploring": "Keşfe Başla",
+        "featuredTitle": "Öne Çıkan Yerler",
+        "hotelsTitle": "Konaklama",
+        "restaurantsTitle": "Yeme & İçme",
+        "liveInKhiva": "Hive'de Canlı",
+        "scanCardTitle": "Yapıyı Tara",
+        "scanCardDesc": "AI Görüş ile",
+        "tourCardTitle": "Sesli<br/>Turlar",
+        "tourCardDesc": "Sürükleyici hikayeler",
+        "planCardTitle": "Gezi<br/>Planlayıcı",
+        "planCardDesc": "Özel rota",
+        "toolsTitle": "Seyahat Araçları",
+        "authChecker": "Orijinallik Kontrolü",
+        "authDesc": "Hediyelik kalitesini doğrula",
+        "translator": "Canlı Çevirmen",
+        "transDesc": "Özbekçe - Türkçe sesli",
+        "trustVerified": "Doğrulanmış<br/>İçerik",
+        "trustInstant": "Anında<br/>Erişim",
+        "trustOffline": "Çevrimdışı<br/>Mod"
+    },
+    "pricing": {
+        "title": "Tek Bilet, Tam Erişim",
+        "subtitle": "Cebinizde profesyonel bir tarihçi ile Ichan Kala'yı keşfedin.",
+        "freeTier": "Ücretsiz Kaşif",
+        "freePrice": "0₺",
+        "freeDesc": "Sınırlı erişim",
+        "freeFeature1": "1 Sesli Hikaye",
+        "freeFeature2": "3 Fotoğraf Taraması",
+        "freeFeature3": "Çevrimiçi Harita",
+        "continueFree": "Ücretsiz Devam Et",
+        "premiumTier": "Premium Geçiş",
+        "recommended": "Önerilen",
+        "premiumPrice": "350₺",
+        "perTrip": "/ gezi",
+        "premiumDesc": "Bu gezi için ömür boyu erişim",
+        "premiumFeature1": "Sınırsız AI Sesli Turlar",
+        "premiumFeature2": "Çevrimdışı Harita Erişimi",
+        "premiumFeature3": "Fotoğraf Tanıma (Sınırsız)",
+        "premiumFeature4": "Kişiselleştirilmiş Rota",
+        "premiumFeature5": "Canlı Çevirmen",
+        "premiumFeature6": "Orijinallik Kontrolü",
+        "getAccess": "Tam Erişimi Al",
+        "secureInfo": "Güvenli ödeme • Anında kilit açma"
+    },
+    "tour": {
+        "pageTitle": "Sesli Koleksiyon",
+        "heroTitle": "Seçilmiş Hikayeler",
+        "heroSubtitle": "Kendinizi 2.500 yıllık tarihe bırakın.",
+        "nowPlaying": "Şu An Çalıyor",
+        "audioGuide": "Sesli Rehber",
+        "places": {
+            "kaltaMinor": {
+                "name": "Kalta Minor Minaresi",
+                "desc": "Hive'nin ikonik turkuaz simgesi.",
+                "category": "Görülmeli"
+            },
+            "jumaMosque": {
+                "name": "Cuma Camii",
+                "desc": "213 ahşap sütunuyla ünlü.",
+                "category": "Tarih"
+            },
+            "islamKhoja": {
+                "name": "İslam Hoca Minaresi",
+                "desc": "Özbekistan'ın en yüksek minaresi.",
+                "category": "Mimari"
+            }
+        }
+    },
+    "camera": {
+        "analyzing": "Analiz ediliyor...",
+        "prompt": "Sırlarını çözmek için kamerayı herhangi bir yapıya doğrultun.",
+        "scanAgain": "Tekrar Tara",
+        "matchConfirmed": "Eşleşme Doğrulandı",
+        "histContext": "Tarihsel Bağlam",
+        "startAudio": "Sesli Rehberi Başlat",
+        "noMatch": {
+            "title": "Yapı Tanımlanamadı",
+            "desc": "Bu görüntüyü kayıtlı herhangi bir tarihi yerle eşleştiremedim.",
+            "audio": "Burada kayıtlı bir anıt tanımlayamadım. Ana bir yapıya baktığınızdan ve ışığın iyi olduğundan emin olun.",
+            "tips": "Daha yaklaşmayı, lensi temizlemeyi veya ışığın iyi olduğundan emin olmayı deneyin."
+        },
+        "general": {
+            "title": "Ichan Kala Rehberi",
+            "desc": "Kişisel Tarihçiniz",
+            "welcomeAudio": "Selamlar! Hiva'yı gezmek için hazırım. Nereden başlamak istersiniz?"
+        }
+    },
+    "plan": {
+        "pageTitle": "AI Gezi Planlayıcı",
+        "step1Title": "Ne kadar kalacaksınız?",
+        "step1Desc": "Sizin için mükemmel tempoyu oluşturacağız.",
+        "continue": "Devam Et",
+        "step2Title": "İlgi Alanlarınız",
+        "step2Desc": "Sizin için en önemli olanı seçin.",
+        "generate": "Kişisel Planımı Oluştur",
+        "crafting": "Rota Oluşturuluyor...",
+        "resultTitle": "Rotanız",
+        "resultDesc": "Yürüme mesafeleri ve kalabalığa göre optimize edildi.",
+        "aiGenerated": "AI Tarafından Oluşturuldu",
+        "startDay1": "1. Gün Navigasyonunu Başlat",
+        "interests": {
+            "history": "Tarih",
+            "food": "Yerel Yemek",
+            "shopping": "Alışveriş",
+            "photo": "Fotoğraf Noktaları"
+        }
+    },
+    "shop": {
+        "pageTitle": "Orijinallik Kontrolü",
+        "heroTitle": "Hediyelikleri Doğrula",
+        "heroDesc": "Orijinalliği ve adil değeri tespit etmek için bir fotoğraf yükleyin.",
+        "scanning": "Doku Taranıyor...",
+        "tapToScan": "Taramak için Dokun",
+        "supports": "Halı, Ahşap, Metal desteklenir",
+        "verified": "Doğrulanmış Orijinal",
+        "standard": "Standart Kalite",
+        "confidence": "Güven Skoru",
+        "fairPrice": "Adil Fiyat Tahmini",
+        "scanAnother": "Başka Ürün Tara"
+    },
+    "translate": {
+        "pageTitle": "Tercüman",
+        "you": "Siz",
+        "translation": "Çeviri",
+        "listening": "Dinleniyor...",
+        "tapSpeak": "Konuşmak için Dokun"
+    },
+    "tutorial": {
+        "skip": "Atla",
+        "next": "Devam Et",
+        "getStarted": "Başla",
+        "scan": {
+            "title": "Tara ve Tanı",
+            "desc": "AI destekli bilgi almak için kamerayı herhangi bir yapıya tutun."
+        },
+        "translate": {
+            "title": "Canlı Çevirmen",
+            "desc": "Gerçek zamanlı sesli çeviri ile dil engellerini aşın."
+        },
+        "audio": {
+            "title": "Sesli Turlar",
+            "desc": "Profesyonel sesli rehberlerle tarihe yolculuk yapın."
+        },
+        "plan": {
+            "title": "Akıllı Planlayıcı",
+            "desc": "Saniyeler içinde size özel gezi rotası oluşturun."
+        }
+    }
+}
