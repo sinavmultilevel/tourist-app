@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { Card } from "@/components/ui/Card";
 import { MapPin, Building, Utensils, ShoppingBag, Users } from "lucide-react";
 
+import { API_URL } from "@/lib/api";
+
 export default function AdminDashboard() {
     const [stats, setStats] = useState<any>(null);
 
@@ -13,7 +15,7 @@ export default function AdminDashboard() {
             if (!token) return;
 
             try {
-                const res = await fetch("http://localhost:8000/api/v1/admin/dashboard", {
+                const res = await fetch(`${API_URL}/admin/dashboard`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
