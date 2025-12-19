@@ -1,4 +1,5 @@
-export const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api/v1';
+const apiHost = process.env.NEXT_PUBLIC_API_HOST;
+export const API_URL = process.env.NEXT_PUBLIC_API_URL || (apiHost ? `https://${apiHost}/api/v1` : 'http://localhost:8000/api/v1');
 
 export interface Place {
     id: number;
